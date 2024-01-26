@@ -1,4 +1,4 @@
-
+import javax.swing.*;
 public class BMI {
 private String name;
 private int mosha;
