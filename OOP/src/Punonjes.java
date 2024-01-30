@@ -2,7 +2,7 @@
  * Klasa Punonjes modelon nje punonjes te nje kompanie
  * @author Ardi
  * @version 1.0
- * @
+ * 
  */
 public class Punonjes {
 private String emri; // Emri i punonjesit
