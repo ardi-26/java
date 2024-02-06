@@ -8,6 +8,7 @@ public class Data {
  private int dita;
  private int muaji;
  private int viti;
+  
  /**
   * Konstruktori pa parametra qe nderton nje date default
   * 1/1/1970

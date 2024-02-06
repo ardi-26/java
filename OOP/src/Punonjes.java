@@ -1,3 +1,6 @@
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Klasa Punonjes modelon nje punonjes te nje kompanie
  * @author Ardi
@@ -10,6 +13,7 @@ private String mbiermi; // Mbiemri i punonjesit
 private double pagaMujore; // Pagen mujore te punonjesit
 private boolean paga13 = false; // Paga 13 e punonjesit
 private static int nrPunonjes = 0;
+private Data dataLindjes; // procesi i agregimit
 public Punonjes() {
 	nrPunonjes++;
 }
@@ -54,6 +58,16 @@ public double getPagaVjetore() {
 	public static int getNrPunonjes() {
 	return nrPunonjes;
 }
+	
+	
+	public Data getDataLindjes() {
+		return dataLindjes;
+	}
+	
+	public void setDataLindjes(Data dataLindjes) {
+		
+		this.dataLindjes = dataLindjes;
+	}
 	public static void afishoPunonjes(Punonjes punonjes) {
 		
 		if(punonjes!=null) System.out.printf("%-9s%-13s%11.2f\n",
@@ -61,5 +75,24 @@ public double getPagaVjetore() {
 				punonjes.getMbiermi(),
 				punonjes.getPagaVjetore()
 				);
+	}
+	/**
+	 * Metoda llogarit dhe kthen moshen e punonjesit
+	 * @return mosha ne vite e punonjesit
+	 */
+	public int getMosha() {
+		//to do
+		// Te perdoret klasa java.util.Date ose LocalDate per te marre daten korente
+		// dhe per te bere extract vitin korent. Mosha llogaritet
+		// si diference midis vitit korent dhe vitit te lindjes
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(new Date());
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH);
+		if(this.getDataLindjes().getMuaji() <= month)
+		    return year - this.getDataLindjes().getViti() ;
+		else 
+			return year - this.getDataLindjes().getViti() - 1;
+			
 	}
 }
