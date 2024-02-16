@@ -1,29 +1,21 @@
-
-enum Status {VITIPARE, VITIDYTE, BACHELOR, MASTER};
-
-
-public class Student extends Person {
-private Status status;
- 
 /**
  * 
+ * enum eshte shkurtim i enumerator dhe perdoret per te krijuar nje liste me
+ * konstante
+ * enum emriEnumerator {lista e konstanteve te ndara me presje}
+ * @author User
+ *
  */
-public Student() {
-	super();
-	// TODO Auto-generated constructor stub
-}
+enum Status { VITIPARE, VITIDYTE, BACHELOR, MASTER};
 
-/**
- * @param emri
- * @param adresa
- * @param telefoni
- * @param email
- * @param status
- */
-public Student(String emri, String adresa, String telefoni, String email, Status status) {
-	super(emri, adresa, telefoni, email);
-	this.status = status;
-}
+public class Student extends Person {
+ private Status status;
+ 
+ public Student(String emri, String adresa, String telefoni, String email, Status status) {
+	 
+	 super(emri, adresa, telefoni,email);
+	 this.status = status;
+ }
 
 /**
  * @return the status
@@ -38,13 +30,8 @@ public Status getStatus() {
 public void setStatus(Status status) {
 	this.status = status;
 }
-
-@Override
-public String toString() {
-	// TODO Auto-generated method stub
-	return String.format("%sStatusi: %s\n",super.toString(), this.getStatus().name());
-};
-
-
-
+ @Override
+ public String toString() {
+	 return super.toString() + String.format("Statusi i studentit %s\n", status.name());
+ }
 }
