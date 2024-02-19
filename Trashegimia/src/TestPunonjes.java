@@ -9,7 +9,8 @@ public class TestPunonjes {
 		denisi.setEmail("denis12@gmail.com");
 		denisi.setZyra("Lab 4");
 		denisi.setPaga(90000.0);
-		denisi.setDataPunesimit(new Data(12,1, 2020));
+		denisi.setDataPunesimit(new Data(12,1, 2016));
+		denisi.rishikoPaga();
 		System.out.println(denisi);
 	}
 

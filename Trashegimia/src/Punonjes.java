@@ -89,5 +89,16 @@ public class Punonjes extends Person {
 			return year - this.getDataPunesimit().getViti() - 1;
 			
 	}
+	
+	/**
+	 * rishikon pagen me 10%  ne varesi te vjetersise(me shume se 5 vite pune)
+	 * @return true nese punonjesi ploteson kriteret
+	 */
+	public boolean rishikoPaga() {
+		if(getVitetPunesimit() < 5) return false;
+		
+		this.setPaga(paga*1.1);
+		return true;
+	}
 
 }
