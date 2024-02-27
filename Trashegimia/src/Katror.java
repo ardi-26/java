@@ -18,7 +18,6 @@ public class Katror extends Drejtkendesh{
 		
 	}
 	
-	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

@@ -19,12 +19,16 @@ public Trekendesh() {
  * @param brinja1 
  * @param brinja2
  * @param brinja3
+ * @throws IllegalArgumentException kur njera nga brinjet eshte negative
  */
 public Trekendesh(String ngjyra, boolean ngjyrosur, double brinja1, 
 		double brinja2, double brinja3) {
 	super(ngjyra, ngjyrosur);
 	System.out.println("Konstruktori me parametra i klases Trekendesh");
 	// TODO Auto-generated constructor stub
+	
+	if(brinja1<=0 || brinja2<=0 || brinja3<=0)
+		throw new IllegalArgumentException("Njera nga brinjet eshte negative");
 	this.brinja1 = brinja1;
 	this.brinja2 = brinja2;
 	this.brinja3 = brinja3;
@@ -77,6 +81,7 @@ public void setBrinja3(double brinja3) {
  * Llogarit perimetrin e trekendeshit
  * @return brinja1+ brinja2+ brinja3
  */
+@Override
 public double getPerimeter() {
 	return brinja1 + brinja2 + brinja3;
 	
@@ -85,7 +90,8 @@ public double getPerimeter() {
  * Llogarit siperfaqen trekendeshit sipas formules se Heronit
  * @return siperfaqja e trekendeshit
  */
-public double getSipefaqe() {
+@Override
+public double getSiperfaqe() {
 	double hp = getPerimeter()/2.0; // half perimeter
 	return Math.sqrt(hp*(hp-brinja1)*(hp-brinja2)*(hp-brinja3));
 }

@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 /**
  * 
  * enum eshte shkurtim i enumerator dhe perdoret per te krijuar nje liste me
@@ -8,7 +10,7 @@
  */
 enum Status { VITIPARE, VITIDYTE, BACHELOR, MASTER};
 
-public class Student extends Person {
+public class Student extends Person implements NumriKonferencave, Comparable<Student>, Serializable {
  private Status status;
  
  public Student(String emri, String adresa, String telefoni, String email, Status status) {
@@ -34,4 +36,16 @@ public void setStatus(Status status) {
  public String toString() {
 	 return super.toString() + String.format("Statusi i studentit %s\n", status.name());
  }
+
+@Override
+public int nrKonferenca() {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int compareTo(Student o) {
+	// TODO Auto-generated method stub
+	return 0;
+}
 }
